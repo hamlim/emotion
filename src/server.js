@@ -1,9 +1,11 @@
-import filter from '@arr/filter'
-import forEach from '@arr/foreach'
+const forEach = require('@arr/foreach')
+const filter = require('@arr/filter.mutate')
 import { sheet, inserted } from './index'
 import { keys } from './utils'
 
 const RGX = /css(?:[a-zA-Z0-9-]*)-([a-zA-Z0-9]+)/gm
+
+export { flush, css, injectGlobal, fontFace, keyframes, hydrate, objStyle } from './index'
 
 export function extractCritical (html) {
   // parse out ids from html
